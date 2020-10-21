@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+
+	<title>Login Page</title>
+   
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	
+	<link rel="icon" type="image/png" href="img/logo.png">
+	
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById("Button").disabled = true;
+});
+function Mascara (formato, keypress, objeto){
+		campo = eval (objeto);
+		
+		//rg
+		if(formato=='rg'){  //12.045.224-9
+			separador1 = '.';
+			separador2 = '-';
+			conjunto1 = 2;
+			conjunto2 = 6;
+			conjunto3 = 10;
+			if (campo.value.length == conjunto1){
+				campo.value = campo.value + separador1;
+			}
+			if (campo.value.length == conjunto2){
+				campo.value = campo.value + separador1;
+			}
+			if (campo.value.length == conjunto3){
+				campo.value = campo.value + separador2;
+			}
+		}
+		//cpf
+		if(formato=='cpf'){  //537.045.224-91
+			separador1 = '.';
+			separador2 = '-';
+			conjunto1 = 3;
+			conjunto2 = 7;
+			conjunto3 = 11;
+			if (campo.value.length == conjunto1){
+				campo.value = campo.value + separador1;
+			}
+			if (campo.value.length == conjunto2){
+				campo.value = campo.value + separador1;
+			}
+			if (campo.value.length == conjunto3){
+				campo.value = campo.value + separador2;
+			}
+		}
+		//cep
+		if(formato=='cep'){  //03804-010
+			separador1 = '-';
+			conjunto1 = 5;
+
+			if (campo.value.length == conjunto1){
+				campo.value = campo.value + separador1;
+			}
+		}
+		//nascimento
+		if(formato=='nasc'){  // 00/00/0000
+			separador1 = '/';
+			conjunto1 = 2;
+			conjunto2 = 5;
+
+			if (campo.value.length == conjunto1){
+				campo.value = campo.value + separador1;
+			}
+			if (campo.value.length == conjunto2){
+				campo.value = campo.value + separador1;
+			}
+		}
+		//fone
+		if( formato=='fone'){ //(99)9999-9999
+			separador1 = '(';
+			separador2= ')';
+			separador3= '-';
+			conjunto1= 0;
+			conjunto2= 3;
+			conjunto3= 8;
+			if(campo.value.length == conjunto1){
+				campo.value = campo.value + separador1;
+			}
+			if(campo.value.length == conjunto2){
+				campo.value = campo.value + separador2;
+			}
+			if(campo.value.length == conjunto3){
+				campo.value = campo.value + separador3;
+			}
+		}		
+	}
+	function valida(){
+		if(document.cad.rg.value==""){
+			vazio=true;
+		}
+		else if(document.cad.nome.value==""){
+			vazio=true;
+		}
+		else if(document.cad.dataNasc.value==""){
+			vazio=true;
+		}
+		else if(document.cad.telCel.value==""){
+			vazio=true;
+		}
+		else if(document.cad.cpf.value==""){
+			vazio=true;
+		}
+		else if(document.cad.cidade.value==""){
+			vazio=true;
+		}
+		else if(document.cad.estado.value==""){
+			vazio=true;
+		}
+		else if(document.cad.endereco.value==""){
+			vazio=true;
+		}
+		else if(document.cad.cep.value==""){
+			vazio=true;
+		}
+		else if(document.cad.numero.value==""){
+			vazio=true;
+		}
+		else if(document.cad.senha.value==""){
+			vazio=true;
+		}
+		else{
+			vazio=false;
+		}
+		if(vazio==true){ document.getElementById("Button").disabled = true; }
+		if(vazio==false) {
+		document.getElementById("Button").disabled = false;
+		}
+	}
+</script>
+<body>
+<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card-up">
+					<br><br>
+				<div class="card-header">
+					<h3>Cadastro de paciente</h3>
+				</div>
+					<div class="card-body">
+						<form name="cad" method="POST" action="php/cad.php">
+							<div class="row justify-content-around">
+								<div class="col-sm-7 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										
+										<input type="text" name= "nome" class="form-control" placeholder="Nome" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "rg" maxlength=12 class="form-control" placeholder="RG" title="00.000.000-0"
+										onkeypress="Mascara('rg',window.event.keyCode,'document.cad.rg')" onchange="valida()">
+										
+									</div>
+								</div>
+							</div>
+
+							<div class="row justify-content-around">
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "dataNasc" maxlength=10 class="form-control" placeholder="Data de Nascimento" 
+										title="00/00/0000" onkeypress="Mascara('nasc',window.event.keyCode,'document.cad.dataNasc')" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "telCel" maxlength=14 class="form-control" placeholder="Telefone celular"
+										title="(00)00000-0000" onkeypress="Mascara('fone',window.event.keyCode,'document.cad.telCel')" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "cpf" maxlength=14 class="form-control" placeholder="CPF"
+										title="000.000.000-00" onkeypress="Mascara('cpf',window.event.keyCode,'document.cad.cpf')" onchange="valida()">
+										
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="row justify-content-around">
+							
+
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "estado" class="form-control" placeholder="Estado" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "cidade" class="form-control" placeholder="Cidade" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "cep" maxlength=9 class="form-control" placeholder="CEP"
+										title="00000-000" onkeypress="Mascara('cep',window.event.keyCode,'document.cad.cep')" onchange="valida()">
+										
+									</div>
+								</div>	
+								
+							</div>	
+
+							<div class="row justify-content-around">
+								
+								<div class="col-sm-8 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "endereco" class="form-control" placeholder="Endereço" onchange="valida()">
+										
+									</div>
+								</div>
+								
+								<div class="col-sm-2 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "numero" class="form-control" placeholder="Número" onchange="valida()">
+										
+									</div>
+								</div>
+							</div>
+
+							<div class="row justify-content-around">
+								
+								<div class="col-sm-3 ">
+									<div class="input-group form-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-user"></i></span>
+										</div>
+										<input type="text" name= "senha" class="form-control" placeholder="Senha" onchange="valida()" >
+										
+									</div>
+								</div>
+							</div>							
+						
+						<br>
+						<div class="form-group">	
+								<div class="text-center">
+								<input type="submit" id="Button" value="Cadastrar" class="btn float-none login_btn" onclick="valida()" >
+								</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+	</div>
+</div>
+</body>
+</html>
