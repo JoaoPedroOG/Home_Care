@@ -3,30 +3,21 @@
 <title>Home&Care</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/homepage.css">
-<link rel="icon" type="image/png" href="../img/logo.png">
+<link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-<script src = "../js/mask.js"></script>
+<script src = "js/mask.js"></script>
 <style>
 body {font-family: "Lato", sans-serif}
 
 </style>
+
 <body class="w3-aqua w3-white">
-<?php
-include 'config.php';
-include 'mysqlexecuta.php';
-$con = conectar ();
-mysql_select_db('bdHomeCare');
-$login= $_POST["cpf"];
-$senha= $_POST["senha"];
-$sql="SELECT * FROM paciente where cpf like '$login' && senha like '$senha'";
-$res = mysqlexecuta($con,$sql);
-$quant= (mysql_num_rows($res)); //qtde de linhas encontradas na consulta
-if ($quant==0){?>   
-    <!-- Navbar -->
+
+<!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -34,7 +25,7 @@ if ($quant==0){?>
     <a href="#cadastrar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CADASTRAR</a>
     <a href="#contato" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTATO</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="Entrar">ENTRAR <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-padding-large w3-button" title="More">ENTRAR <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal_pac').style.display='block'">Paciente</a>
         <a class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal_med').style.display='block'">Médico</a>
@@ -42,8 +33,6 @@ if ($quant==0){?>
       </div>
     </div>
 	<a href="#sobre" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
-   
-   
   </div>
 </div>
 
@@ -56,7 +45,7 @@ if ($quant==0){?>
       <h2 class="w3-wide"><i class="fa fa-user-circle w3-margin-right"></i>Paciente Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_pac" method="POST" action="../php/login.php">
+      <form name="entra_pac" method="POST" action="php/login.php">
       <p><label><i class="fa fa-id-card-o"></i> CPF</label></p>  
       <input class="w3-input w3-border " id="InputCPF" name="cpf" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
@@ -77,7 +66,7 @@ if ($quant==0){?>
       <h2 class="w3-wide"><i class="fa fa-user-md w3-margin-right"></i>Médico Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_med" method="POST" action="../php/login_2.php">
+      <form name="entra_med" method="POST" action="php/login_2.php">
       <p><label><i class="fa fa-id-card-o"></i> CRM</label></p>  
       <input class="w3-input w3-border" id="InputCRM" name="crm" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
@@ -98,12 +87,12 @@ if ($quant==0){?>
       <h2 class="w3-wide"><i class="fa fa-hospital-o w3-margin-right"></i>Hospital Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_pac" method="POST" action="../php/login_3.php">
+      <form name="entra_pac" method="POST" action="php/login_3.php">
       <p><label><i class="fa fa-id-card-o"></i> CNES</label></p>  
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" >CNES ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid3" >CRM ou Senha inválidos</h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp').style.display='none'" >Cadastre-se</a></p>
@@ -112,24 +101,23 @@ if ($quant==0){?>
 </div>
 
 <!-- Ticket Modal Hospital Login 2 -->
-<div id="ticketModal_hosp2" class="w3-modal">
+<div id="ticketModal_hosp" class="w3-modal">
   <div class="w3-modal-content w3-animate-top w3-card-4">
     <header class="w3-container w3-red w3-center w3-padding-32"> 
-      <span onclick="document.getElementById('ticketModal_hosp2').style.display='none'" 
+      <span onclick="document.getElementById('ticketModal_hosp').style.display='none'" 
      class="w3-button w3-red w3-xlarge w3-display-topright">×</span>
       <h2 class="w3-wide"><i class="fa fa-hospital-o w3-margin-right"></i>Hospital Login</h2>
     </header>
     <div class="w3-container w3-preto">
       <!-- login 4 verifica se o login do hospital é real e, com isso o encaminha para a pagina de cadastro de médico-->
-      <form name="entra_pac" method="POST" action="../php/login_4.php"> 
+      <form name="entra_pac" method="POST" action="php/login_4.php"> 
       <p><label><i class="fa fa-id-card-o"></i> CNES</label></p>  
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" >CNES ou Senha inválidos</h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
-      <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp2').style.display='none'">Close <i class="fa fa-remove"></i></button>
-      <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp2').style.display='none'" >Cadastre-se</a></p>
+      <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp').style.display='none'">Close <i class="fa fa-remove"></i></button>
+      <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp').style.display='none'" >Cadastre-se</a></p>
     </div>
   </div>
 </div>
@@ -155,15 +143,15 @@ if ($quant==0){?>
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>Criar uma consulta</p>
-        <img src="../img/medico.png" class="w3-round w3-margin-bottom" alt="consulta" style="width:60%">
+        <img src="img/medico.png" class="w3-round w3-margin-bottom" alt="consulta" style="width:60%">
       </div>
       <div class="w3-third">
         <p>Esperar pelo médico</p>
-        <img src="../img/relogio.png" class="w3-round w3-margin-bottom" alt="tempo" style="width:60%">
+        <img src="img/relogio.png" class="w3-round w3-margin-bottom" alt="tempo" style="width:60%">
       </div>
       <div class="w3-third">
         <p>Ser atendido na sua casa</p>
-        <img src="../img/ferramenta.png" class="w3-round" alt="atendimento" style="width:60%">
+        <img src="img/ferramenta.png" class="w3-round" alt="atendimento" style="width:60%">
       </div>
     </div>
   </div>
@@ -176,28 +164,28 @@ if ($quant==0){?>
 		<h3 class="w3-wide w3-center">Cadastre-se como:</h3><br>
       <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
         <div class="w3-third w3-margin-bottom ">
-          <img src="../img/pac.png" alt="Paciente" style="width:100%"  class="w3-hover-opacity ">
+          <img src="img/pac.png" alt="Paciente" style="width:100%"  class="w3-hover-opacity ">
 		  <div class="w3-container w3-amber">
             <p><b>Paciente</b></p>
             <p>Para se cadastrar como um paciente clique no botão.</p><br><br>
-            <a href="../cadastro_paciente.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+            <a href="cadastro_paciente.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
-          <img src="../img/doctor.png" alt="Médico" style="width:100%"  class="w3-hover-opacity"> 
+          <img src="img/doctor.png" alt="Médico" style="width:100%"  class="w3-hover-opacity"> 
           <div class="w3-container w3-amber">
             <p><b>Médico</b></p>
 			<p>Para se cadastrar como um médico clique no botão.</p>
 			<h6 class="w3-opacity">Aviso: Apenas contas do tipo hospital podem cadastrar os médicos.</h6>
-          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal_hosp2').style.display='block'">CADASTRAR</button>
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal_hosp').style.display='block'">CADASTRAR</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
-          <img src="../img/hospital.png" alt="Hospital" style="width:100%" class="w3-hover-opacity">
+          <img src="img/hospital.png" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
           <div class="w3-container w3-amber">
             <p><b>Hospital</b></p>
             <p>Para se cadastrar como um hospital clique no botão.</p><br><br>
-           <a href="../cadastro_hospital.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+           <a href="cadastro_hospital.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
       </div>
@@ -251,17 +239,13 @@ if ($quant==0){?>
   <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> da <a href="https://www.flaticon.com/" title="Flaticon"> Flaticon</a>
   </p>
 </div>
-
 </footer>
 <footer>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid").style.visibility = 'visible';
+            document.getElementById("invalid").style.visibility = 'hidden';
             document.getElementById("invalid2").style.visibility = 'hidden';
             document.getElementById("invalid3").style.visibility = 'hidden';
-        });
-        document.addEventListener("DOMContentLoaded", function(event) {
-          document.getElementById('ticketModal_pac').style.display='block';
         });
   function myFunction() {
     var x = document.getElementById("navDemo");
@@ -271,7 +255,6 @@ if ($quant==0){?>
       x.className = x.className.replace(" w3-show", "");
     }
   }
-
   // When the user clicks anywhere outside of the modal, close it
   var modal = document.getElementById('ticketModal');
   window.onclick = function(event) {
@@ -279,11 +262,6 @@ if ($quant==0){?>
       modal.style.display = "none";
     }
   }
-
 </script>
-    <?php
-}
-    else
-    header("location:menu.php");?>
-    </body>
-    </html>
+</body>
+</html>

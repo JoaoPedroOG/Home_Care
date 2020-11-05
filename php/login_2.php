@@ -20,9 +20,9 @@ include 'config.php';
 include 'mysqlexecuta.php';
 $con = conectar ();
 mysql_select_db('bdHomeCare');
-$login= $_POST["cpf"];
+$login= $_POST["crm"];
 $senha= $_POST["senha"];
-$sql="SELECT * FROM paciente where cpf like '$login' && senha like '$senha'";
+$sql="SELECT * FROM medico where crm like '$login' && senha like '$senha'";
 $res = mysqlexecuta($con,$sql);
 $quant= (mysql_num_rows($res)); //qtde de linhas encontradas na consulta
 if ($quant==0){?>   
@@ -61,7 +61,7 @@ if ($quant==0){?>
       <input class="w3-input w3-border " id="InputCPF" name="cpf" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid" >CPF ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid1" >CPF ou Senha inválidos</h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_pac').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_pac').style.display='none'" >Cadastre-se</a></p>
@@ -256,12 +256,12 @@ if ($quant==0){?>
 <footer>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid").style.visibility = 'visible';
-            document.getElementById("invalid2").style.visibility = 'hidden';
+            document.getElementById("invalid1").style.visibility = 'hidden';
+            document.getElementById("invalid2").style.visibility = 'visible';
             document.getElementById("invalid3").style.visibility = 'hidden';
         });
         document.addEventListener("DOMContentLoaded", function(event) {
-          document.getElementById('ticketModal_pac').style.display='block';
+          document.getElementById('ticketModal_med').style.display='block';
         });
   function myFunction() {
     var x = document.getElementById("navDemo");
