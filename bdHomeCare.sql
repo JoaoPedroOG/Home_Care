@@ -37,7 +37,7 @@ CREATE TABLE `consulta` (
   `endereco_consulta` varchar(50) NOT NULL,
   `diagnostico` varchar(50) NOT NULL,
   `data_consulta` date NOT NULL,
-  `horario_consulta` time NOT NULL
+  `horario_consulta` time NOT NULL  
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,7 +63,9 @@ CREATE TABLE `hospital` (
   `nome` varchar(50) NOT NULL,
   `cep` varchar(9) NOT NULL,
   `cnes` varchar(7) NOT NULL,
-  `numero` int(11) NOT NULL
+  `numero` int(11) NOT NULL,
+  UNIQUE(cnpj),
+  UNIQUE(cnes)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -85,13 +87,16 @@ CREATE TABLE `hospital_medico` (
 
 CREATE TABLE `medico` (
   `cod_medico` int(11) NOT NULL,
-  `crm_uf` varchar(13) NOT NULL,
+  `crm` varchar(13) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `data_nasc` date NOT NULL,
   `rg` varchar(12) NOT NULL,
   `cpf` varchar(14) NOT NULL,
   `cidade` varchar(50) NOT NULL,
-  `estado` varchar(2) NOT NULL
+  `estado` varchar(2) NOT NULL,
+  UNIQUE(crm),
+  UNIQUE(rg),
+  UNIQUE(cpf)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -123,7 +128,9 @@ CREATE TABLE `paciente` (
   `endereco` varchar(50) NOT NULL,
   `cep` varchar(9) NOT NULL,
   `numero` int(11) NOT NULL,
-  `senha` varchar(20) NOT NULL
+  `senha` varchar(20) NOT NULL,
+  UNIQUE(rg),
+  UNIQUE(cpf)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --

@@ -12,7 +12,6 @@
 <script src = "js/mask.js"></script>
 <style>
 body {font-family: "Lato", sans-serif}
-
 </style>
 
 <body class="w3-aqua w3-white">
@@ -50,7 +49,7 @@ body {font-family: "Lato", sans-serif}
       <input class="w3-input w3-border " id="InputCPF" name="cpf" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid" >CPF ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_pac').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_pac').style.display='none'" >Cadastre-se</a></p>
@@ -71,7 +70,7 @@ body {font-family: "Lato", sans-serif}
       <input class="w3-input w3-border" id="InputCRM" name="crm" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid2" >CRM ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid2" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_med').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_med').style.display='none'" >Cadastre-se</a></p>
@@ -92,7 +91,7 @@ body {font-family: "Lato", sans-serif}
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" >CRM ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp').style.display='none'" >Cadastre-se</a></p>
@@ -101,10 +100,10 @@ body {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Ticket Modal Hospital Login 2 -->
-<div id="ticketModal_hosp" class="w3-modal">
+<div id="ticketModal_hosp2" class="w3-modal">
   <div class="w3-modal-content w3-animate-top w3-card-4">
     <header class="w3-container w3-red w3-center w3-padding-32"> 
-      <span onclick="document.getElementById('ticketModal_hosp').style.display='none'" 
+      <span onclick="document.getElementById('ticketModal_hosp2').style.display='none'" 
      class="w3-button w3-red w3-xlarge w3-display-topright">×</span>
       <h2 class="w3-wide"><i class="fa fa-hospital-o w3-margin-right"></i>Hospital Login</h2>
     </header>
@@ -115,9 +114,10 @@ body {font-family: "Lato", sans-serif}
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
+      <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
-      <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp').style.display='none'">Close <i class="fa fa-remove"></i></button>
-      <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp').style.display='none'" >Cadastre-se</a></p>
+      <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp2').style.display='none'">Close <i class="fa fa-remove"></i></button>
+      <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp2').style.display='none'" >Cadastre-se</a></p>
     </div>
   </div>
 </div>
@@ -168,7 +168,7 @@ body {font-family: "Lato", sans-serif}
 		  <div class="w3-container w3-amber">
             <p><b>Paciente</b></p>
             <p>Para se cadastrar como um paciente clique no botão.</p><br><br>
-            <a href="cadastro_paciente.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+            <a href="cadastro/cad_paciente.php"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -177,15 +177,15 @@ body {font-family: "Lato", sans-serif}
             <p><b>Médico</b></p>
 			<p>Para se cadastrar como um médico clique no botão.</p>
 			<h6 class="w3-opacity">Aviso: Apenas contas do tipo hospital podem cadastrar os médicos.</h6>
-          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal_hosp').style.display='block'">CADASTRAR</button>
+          <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal_hosp2').style.display='block'">CADASTRAR</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
-          <img src="img/hospital.png" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+          <img src="img/hospital.png" alt="Hospital" style="width:100%" class="w3-hover-opacity">
           <div class="w3-container w3-amber">
             <p><b>Hospital</b></p>
             <p>Para se cadastrar como um hospital clique no botão.</p><br><br>
-           <a href="cadastro_hospital.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+           <a href="cadastro/cad_hospital.php"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
       </div>
@@ -242,11 +242,7 @@ body {font-family: "Lato", sans-serif}
 </footer>
 <footer>
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid").style.visibility = 'hidden';
-            document.getElementById("invalid2").style.visibility = 'hidden';
-            document.getElementById("invalid3").style.visibility = 'hidden';
-        });
+  
   function myFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {

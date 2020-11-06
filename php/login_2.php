@@ -61,7 +61,7 @@ if ($quant==0){?>
       <input class="w3-input w3-border " id="InputCPF" name="cpf" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid1" >CPF ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid1" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_pac').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_pac').style.display='none'" >Cadastre-se</a></p>
@@ -82,7 +82,7 @@ if ($quant==0){?>
       <input class="w3-input w3-border" id="InputCRM" name="crm" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid2" >CRM ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid2" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_med').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_med').style.display='none'" >Cadastre-se</a></p>
@@ -103,7 +103,7 @@ if ($quant==0){?>
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" >CNES ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp').style.display='none'" >Cadastre-se</a></p>
@@ -126,7 +126,7 @@ if ($quant==0){?>
       <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" >CNES ou Senha inválidos</h5>
+      <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp2').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp2').style.display='none'" >Cadastre-se</a></p>
@@ -180,7 +180,7 @@ if ($quant==0){?>
 		  <div class="w3-container w3-amber">
             <p><b>Paciente</b></p>
             <p>Para se cadastrar como um paciente clique no botão.</p><br><br>
-            <a href="../cadastro_paciente.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+            <a href="../cadastro/cad_paciente.php"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -197,7 +197,7 @@ if ($quant==0){?>
           <div class="w3-container w3-amber">
             <p><b>Hospital</b></p>
             <p>Para se cadastrar como um hospital clique no botão.</p><br><br>
-           <a href="../cadastro_hospital.html"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
+           <a href="../cadastro/cad_paciente.php"><button class="w3-button w3-black w3-margin-bottom" >CADASTRAR</button></a>
           </div>
         </div>
       </div>
@@ -256,9 +256,7 @@ if ($quant==0){?>
 <footer>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid1").style.visibility = 'hidden';
-            document.getElementById("invalid2").style.visibility = 'visible';
-            document.getElementById("invalid3").style.visibility = 'hidden';
+            document.getElementById("invalid2").textContent = 'CRM ou Senha inválidos';
         });
         document.addEventListener("DOMContentLoaded", function(event) {
           document.getElementById('ticketModal_med').style.display='block';
