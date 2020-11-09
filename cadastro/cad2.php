@@ -32,8 +32,6 @@ include '../php/mysqlexecuta.php';
 
 $con = conectar();
 
-mysql_select_db('bdHomeCare');
-
 $sql = "INSERT INTO medico(crm, uf, nome, data_nasc, rg, cpf, cidade, estado, senha) 
 VALUES('$crm', '$uf', '$nome', '$data_nasc', '$rg', '$cpf', '$cidade', '$estado', '$senha')";
 

@@ -19,12 +19,12 @@ body {font-family: "Lato", sans-serif}
 include 'config.php';
 include 'mysqlexecuta.php';
 $con = conectar ();
-mysql_select_db('bdHomeCare');
+
 $login= $_POST["crm"];
 $senha= $_POST["senha"];
 $sql="SELECT * FROM medico where crm like '$login' && senha like '$senha'";
 $res = mysqlexecuta($con,$sql);
-$quant= (mysql_num_rows($res)); //qtde de linhas encontradas na consulta
+$quant= (mysqli_num_rows($res)); //qtde de linhas encontradas na consulta
 if ($quant==0){?>   
     <!-- Navbar -->
 <div class="w3-top">

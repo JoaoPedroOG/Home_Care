@@ -8,18 +8,19 @@
 error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
     function  conectar ()
 	{
-$hostdb = '127.0.0.1'; //servidor mysql, pode ser o nome (localhost) ou o endereço ip (127.0.0.1)
-$userdb = 'root'; //usuário do mysql que terá o acesso
-$passadb = ''; //senha do usuário
+$hostdb = '127.0.0.1'; //servidor mysql, pode ser o nome (localhost) ou o endereï¿½o ip (127.0.0.1)
+$userdb = 'root'; //usuï¿½rio do mysql que terï¿½ o acesso
+$passdb = ''; //senha do usuï¿½rio
+$bd = 'bdHomeCare';
 
-if ($con  = mysql_pconnect($hostdb,$userdb,$passdb))
+if ($con  = mysqli_connect($hostdb,$userdb,$passdb,$bd))
    {
-	mysql_set_charset('utf8',$con);
-    return $con; //se a conexão for bem sucedida, será retoranado a variável $con
+	mysqli_set_charset($con,'utf8');
+    return $con; //se a conexï¿½o for bem sucedida, serï¿½ retoranado a variï¿½vel $con
    }
 else
     {
-     return 0; //se a conexão não ocorrer, será retornado 0
+     return 0; //se a conexï¿½o nï¿½o ocorrer, serï¿½ retornado 0
     }
 }
 ?>

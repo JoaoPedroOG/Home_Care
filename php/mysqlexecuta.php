@@ -1,40 +1,45 @@
 <<!DOCTYPE html>
-<html lang="pt">
-<title>PHP - Função Executar</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/homepage.css">
-<link rel="icon" type="image/png" href="../img/logo.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-<script src = "../js/mask.js"></script>
-<style>
-body {font-family: "Lato", sans-serif}
-</style>
-<body class="w3-aqua w3-white">
-<?php
-ini_set('default_charset', 'UTF-8');
+   <html lang="pt">
+   <title>PHP - Função Executar</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+   <link rel="icon" type="image/png" href="../img/logo.png">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+   <script src="../js/mask.js"></script>
+   <style>
+      body {
+         font-family: "Lato", sans-serif
+      }
+   </style>
+
+   <body class="w3-aqua w3-white">
+      <?php
+      ini_set('default_charset', 'UTF-8');
 
 
-/*
-$id = Ponteiro da Conex�o aberta
+      /*
+$id = Ponteiro da Conexao aberta
 $sql = Clausula SQL a executar
 $erro = Especifica se a fun�ao exibe ou nao (0=n�o, 1=sim)
 $res = Reposta
 */
-function mysqlexecuta($id,$sql,$erro = 1){
-         if(empty($sql) or !($id))
-         return 0;
-         if (!($res = @mysql_query($sql,$id))){
-            if($erro)
-            exit;
+      function mysqlexecuta($con,$sql)
+      {
+         $erro = 1;
+         if (empty($con) or !($sql))
+            return 0;
+         if (!($res = mysqli_query($con, $sql))) {
+            if ($erro)
+               exit;
          }
-          return $res;
-         }
-?>
-<!-- <div class="w3-top">
+         return $res;
+      }
+      ?>
+      <!-- <div class="w3-top">
   <div class="w3-bar w3-red w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a class="w3-bar-item w3-padding-large">HOME&CARE</a>
@@ -54,5 +59,6 @@ function mysqlexecuta($id,$sql,$erro = 1){
       </h4>
    </div>
 </div>-->
-</body>
-</html>
+   </body>
+
+   </html>

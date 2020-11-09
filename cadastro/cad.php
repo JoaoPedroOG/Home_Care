@@ -39,14 +39,12 @@ include '../php/mysqlexecuta.php';
 
 $con = conectar();
 
-mysql_select_db('bdHomeCare');
-
 $sql = "INSERT INTO paciente (rg, nome, data_nasc, fone, cpf, cidade, estado, endereco, cep, numero, senha) 
 VALUES ('$rg','$nome','$data_nasc','$fone','$cpf','$cidade','$estado','$endereco','$cep',$numero,'$senha')";
 
 
-$consulta = mysql_query("SELECT * FROM paciente where rg like '$rg' or cpf like '$cpf' ");
-$numRegistros = mysql_num_rows($consulta);
+$consulta = mysqli_query($con,"SELECT * FROM paciente where rg like '$rg' or cpf like '$cpf'");
+$numRegistros = mysqli_num_rows($consulta);
 
 /*if( $numRegistros == 0){
   echo "<h1 class='w3-vermelho w3-left' id='valid'>Usuário já existe </h5>";
@@ -97,8 +95,8 @@ $numRegistros = mysql_num_rows($consulta);
         <p><label><i class="fa fa-key"></i> Senha</label></p>
         <input class="w3-input w3-border" name="senha" type="password" style="max-width:500px" placeholder="Senha" required name="senha">
         <?php
-        if( $numRegistros == 0){
-          echo "<h5 class='w3-vermelho w3-left' id='valid'> Ocorreu um erro </h5>";
+        if( $numRegistros > 0){
+          echo "<h5 class='w3-vermelho w3-left' id='valid'> Usuário já cadastrado </h5>";
         }else{
           $res = mysqlexecuta($con,$sql);
           echo "Cadastrado";
