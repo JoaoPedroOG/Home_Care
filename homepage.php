@@ -15,7 +15,79 @@ body {font-family: "Lato", sans-serif}
 </style>
 
 <body class="w3-aqua w3-white">
+<?php 
+   if(isset($_GET["e"])){
+      if($_GET["e"] == 1){
+ 
+        echo '
 
+            <script language = "javascript" type = "text/javascript">
+
+                $(document).ready(function(){
+
+                    $("#ticketModal_pac").css("display", "block");
+
+                });
+              document.addEventListener("DOMContentLoaded", function(event) {
+                document.getElementById("invalid").textContent = "CPF ou Senha inválidos";
+              });
+
+            </script>
+
+        ';
+    }
+    else if($_GET["e"]==2){
+      echo '
+            <script language = "javascript" type = "text/javascript">
+
+                $(document).ready(function(){
+
+                    $("#ticketModal_med").css("display", "block");
+
+                });
+              document.addEventListener("DOMContentLoaded", function(event) {
+                document.getElementById("invalid2").textContent = "CRM ou Senha inválidos";
+              });
+
+            </script>
+
+      ';
+    }
+    else if($_GET["e"]==3){
+      echo '
+
+        <script language = "javascript" type = "text/javascript">
+
+            $(document).ready(function(){
+
+                $("#ticketModal_hosp").css("display", "block");
+
+            });
+          document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("invalid3").textContent = "CNES ou Senha inválidos";
+          });
+        </script>
+      ';
+    }
+    else if($_GET["e"]==4){
+      echo '
+
+        <script language = "javascript" type = "text/javascript">
+
+            $(document).ready(function(){
+
+                $("#ticketModal_hosp2").css("display", "block");
+
+            });
+          document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById("invalid4").textContent = "CNES ou Senha inválidos";
+          });
+        </script>
+      ';
+    }
+
+} 
+?>
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card">
@@ -44,9 +116,9 @@ body {font-family: "Lato", sans-serif}
       <h2 class="w3-wide"><i class="fa fa-user-circle w3-margin-right"></i>Paciente Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_pac" method="POST" action="php/login.php">
+      <form name="entra_pac" method="POST" action="php/login.php?v=1">
       <p><label><i class="fa fa-id-card-o"></i> CPF</label></p>  
-      <input class="w3-input w3-border " id="InputCPF" name="cpf" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
+      <input class="w3-input w3-border " id="InputCPF" name="login" type="text" placeholder="Digite seu CPF" required name="CPF" maxlength="14">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
       <h5 class="w3-vermelho w3-left" id="invalid" > </h5>
@@ -65,9 +137,9 @@ body {font-family: "Lato", sans-serif}
       <h2 class="w3-wide"><i class="fa fa-user-md w3-margin-right"></i>Médico Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_med" method="POST" action="php/login_2.php">
+      <form name="entra_med" method="POST" action="php/login.php?v=2">
       <p><label><i class="fa fa-id-card-o"></i> CRM</label></p>  
-      <input class="w3-input w3-border" id="InputCRM" name="crm" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
+      <input class="w3-input w3-border" id="InputCRM" name="login" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
       <h5 class="w3-vermelho w3-left" id="invalid2" > </h5>
@@ -86,9 +158,9 @@ body {font-family: "Lato", sans-serif}
       <h2 class="w3-wide"><i class="fa fa-hospital-o w3-margin-right"></i>Hospital Login</h2>
     </header>
     <div class="w3-container w3-preto">
-      <form name="entra_pac" method="POST" action="php/login_3.php">
+      <form name="entra_pac" method="POST" action="php/login.php?v=3">
       <p><label><i class="fa fa-id-card-o"></i> CNES</label></p>  
-      <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
+      <input class="w3-input w3-border" id="InputCNES" name="login" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
       <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
@@ -109,12 +181,12 @@ body {font-family: "Lato", sans-serif}
     </header>
     <div class="w3-container w3-preto">
       <!-- login 4 verifica se o login do hospital é real e, com isso o encaminha para a pagina de cadastro de médico-->
-      <form name="entra_pac" method="POST" action="php/login_4.php"> 
+      <form name="entra_pac" method="POST" action="php/login.php?v=4"> 
       <p><label><i class="fa fa-id-card-o"></i> CNES</label></p>  
-      <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
+      <input class="w3-input w3-border" id="InputCNES" name="login" type="text" placeholder="Digite o CNES" required name="CNES" maxlength="7">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite a senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid3" > </h5>
+      <h5 class="w3-vermelho w3-left" id="invalid4" > </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_hosp2').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_hosp2').style.display='none'" >Cadastre-se</a></p>
