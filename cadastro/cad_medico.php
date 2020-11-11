@@ -22,7 +22,7 @@ body {font-family: "Lato", sans-serif}
               <script language = "javascript" type = "text/javascript">
 
                 document.addEventListener("DOMContentLoaded", function(event) {
-                  document.getElementById("invalid").textContent = "Usuário já existe nos nossos registros";
+                  document.getElementById("invalid").textContent = "Estes dados de usuário já existem";
                 });
 
               </script>

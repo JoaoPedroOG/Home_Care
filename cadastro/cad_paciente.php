@@ -22,7 +22,7 @@ body {font-family: "Lato", sans-serif}
               <script language = "javascript" type = "text/javascript">
 
                 document.addEventListener("DOMContentLoaded", function(event) {
-                  document.getElementById("invalid").textContent = "Usuário já existe nos nossos registros";
+                  document.getElementById("invalid").textContent = "Estes dados de usuário já existem";
                 });
 
               </script>
@@ -93,6 +93,7 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-container w3-aqua  w3-padding-32"></div>
 </div> 
 <script>
+  
   function myFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {

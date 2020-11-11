@@ -42,10 +42,6 @@ $endereco_hosp = $_POST["endereco_hosp"];
 $numero_hosp = $_POST["num_hosp"];
 $senha_hosp = $_POST["senha_hosp"];
 
-if (strlen($cpf) != 14) {
-
-  //nao esquecer do coiso de erros  pra falar qual erro
-}
 switch ($tipo) {
   case 1:
     $sql = "INSERT INTO paciente(rg, nome, data_nasc, fone, cpf, cidade, estado, endereco, cep, numero, senha) 
@@ -79,14 +75,6 @@ if ($ExisteConta > 0) {
 } 
 else{
   $res = mysqlexecuta($con, $sql);
-  if($tipo==1){
-    header('location:cad_paciente.php?e=2');
-  }
-  else if($tipo==2){
-    header('location:cad_medico.php?e=2');
-  }
-  else if($tipo==3){
-    header('location:cad_hospital.php?e=2');
-  }
+  header('location:cad_paciente.php?e=2');
 }
 ?>
