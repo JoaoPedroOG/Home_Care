@@ -35,58 +35,58 @@ body {font-family: "Lato", sans-serif}
             </script>
 
         ';
-    }
-    else if($_GET["e"]==2){
-      echo '
-            <script language = "javascript" type = "text/javascript">
+      }
+      else if($_GET["e"]==2){
+        echo '
+              <script language = "javascript" type = "text/javascript">
 
-                $(document).ready(function(){
+                  $(document).ready(function(){
 
-                    $("#ticketModal_med").css("display", "block");
+                      $("#ticketModal_med").css("display", "block");
 
+                  });
+                document.addEventListener("DOMContentLoaded", function(event) {
+                  document.getElementById("invalid2").textContent = "CRM ou Senha inválidos";
                 });
-              document.addEventListener("DOMContentLoaded", function(event) {
-                document.getElementById("invalid2").textContent = "CRM ou Senha inválidos";
+
+              </script>
+
+        ';
+      }
+      else if($_GET["e"]==3){
+        echo '
+
+          <script language = "javascript" type = "text/javascript">
+
+              $(document).ready(function(){
+
+                  $("#ticketModal_hosp").css("display", "block");
+
               });
-
-            </script>
-
-      ';
-    }
-    else if($_GET["e"]==3){
-      echo '
-
-        <script language = "javascript" type = "text/javascript">
-
-            $(document).ready(function(){
-
-                $("#ticketModal_hosp").css("display", "block");
-
+            document.addEventListener("DOMContentLoaded", function(event) {
+              document.getElementById("invalid3").textContent = "CNES ou Senha inválidos";
             });
-          document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid3").textContent = "CNES ou Senha inválidos";
-          });
-        </script>
-      ';
-    }
-    else if($_GET["e"]==4){
-      echo '
+          </script>
+        ';
+      }
+      else if($_GET["e"]==4){
+        echo '
 
-        <script language = "javascript" type = "text/javascript">
+          <script language = "javascript" type = "text/javascript">
 
-            $(document).ready(function(){
+              $(document).ready(function(){
 
-                $("#ticketModal_hosp2").css("display", "block");
+                  $("#ticketModal_hosp2").css("display", "block");
 
+              });
+            document.addEventListener("DOMContentLoaded", function(event) {
+              document.getElementById("invalid4").textContent = "CNES ou Senha inválidos";
             });
-          document.addEventListener("DOMContentLoaded", function(event) {
-            document.getElementById("invalid4").textContent = "CNES ou Senha inválidos";
-          });
-        </script>
-      ';
-    }
+          </script>
+        ';
+      }
 
-} 
+    } 
 ?>
 <!-- Navbar -->
 <div class="w3-top">

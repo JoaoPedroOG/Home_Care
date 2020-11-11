@@ -11,8 +11,6 @@ $(document).ready(function () {
   $DN.mask('00/00/0000', { reverse: true });
   var $Fone = $("#InputFone");
   $Fone.mask(' (00)00000-0000', { reverse: true });
-  var $Fone2 = $("#InputFone2");
-  $Fone2.mask(' (00)0000-0000', { reverse: true });
   var $Num = $("#InputN");
   $Num.mask('0000', { reverse: true });
   var $CEP = $("#InputCEP");

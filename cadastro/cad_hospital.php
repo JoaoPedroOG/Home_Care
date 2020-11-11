@@ -15,6 +15,34 @@ body {font-family: "Lato", sans-serif}
 </style>
 
 <body class="w3-aqua w3-white">
+<?php
+  if(isset($_GET["e"])){
+      if($_GET["e"]== 1){
+        echo '
+                <script language = "javascript" type = "text/javascript">
+
+                  document.addEventListener("DOMContentLoaded", function(event) {
+                    document.getElementById("invalid").textContent = "Usuário já existe nos nossos registros";
+                  });
+
+                </script>
+
+            ';
+      }
+      else if($_GET["e"]==2){
+        echo '
+                <script language = "javascript" type = "text/javascript">
+    
+                  document.addEventListener("DOMContentLoaded", function(event) {
+                    document.getElementById("valid").textContent = "Cadastro com sucesso"
+                  });
+    
+                </script>
+    
+            ';
+      }
+    }
+?>
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card">
@@ -34,24 +62,25 @@ body {font-family: "Lato", sans-serif}
     <h2 class=" w3-center w3-red "><i class="fa fa-hospital-o"> CADASTRO DE HOSPITAL</h2></i>
     </div>
     <div class="w3-container w3-content  w3-center-left w3-padding-32 w3-branco " style="max-width:500px">
-        <form name="cad_hosp" method="POST" action="../cadastro/cad3.php"> 
+        <form name="cad_hosp" method="POST" action="../cadastro/cad.php?t=3"> 
         <p><label><i class="fa fa-id-card-o"></i> CNPJ</label></p>  
-        <input class="w3-input w3-border" id="InputCNPJ" name="cnpj" type="text" style="max-width:500px" placeholder="CNPJ" required name="cnpj">
+        <input class="w3-input w3-border" id="InputCNPJ" name="cnpj_hosp" type="text" style="max-width:500px" placeholder="CNPJ" required name="cnpj">
         <p><label><i class="fa fa-id-card-o"></i> CNES</label></p>  
-        <input class="w3-input w3-border" id="InputCNES" name="cnes" type="text" style="max-width:500px" placeholder="CNES" required name="cnes">
+        <input class="w3-input w3-border" id="InputCNES" name="cnes_hosp" type="text" style="max-width:500px" placeholder="CNES" required name="cnes">
         <p><label><i class="fa fa-hospital-o"></i> Nome do Hospital</label></p>  
-        <input class="w3-input w3-border" name="nome" type="text" style="max-width:500px" placeholder="Nome do Hospital" required name="nome" maxlength="60">
+        <input class="w3-input w3-border" name="nome_hosp" type="text" style="max-width:500px" placeholder="Nome do Hospital" required name="nome" maxlength="60">
         <p><label><i class="fa fa-phone"></i> Telefone</label></p>  
-        <input class="w3-input w3-border" id="InputFone2" name="fone" type="text" style="max-width:500px" placeholder="Telefone" required name="fone">
+        <input class="w3-input w3-border" id="InputFone" name="fone_hosp" type="text" style="max-width:500px" placeholder="Telefone" required name="fone">
         <p><label><i class="fa fa-vcard-o"></i> CEP</label></p>  
-        <input class="w3-input w3-border" id="InputCEP" name="cep" type="text" style="max-width:500px" placeholder="CEP" required name="cep">
+        <input class="w3-input w3-border" id="InputCEP" name="cep_hosp" type="text" style="max-width:500px" placeholder="CEP" required name="cep">
         <p><label><i class="fa fa-map-marker"></i> Endereço</label></p>  
-        <input class="w3-input w3-border"  name="endereco" type="text" style="max-width:500px" placeholder="Endereço" required name="endereco">
+        <input class="w3-input w3-border"  name="endereco_hosp" type="text" style="max-width:500px" placeholder="Endereço" required name="endereco">
         <p><label><i class="fa fa-home"></i> Número</label></p>  
-        <input class="w3-input w3-border" id="InputN" name="num" type="text" style="max-width:500px" placeholder="Número" required name="num">
+        <input class="w3-input w3-border" id="InputN" name="num_hosp" type="text" style="max-width:500px" placeholder="Número" required name="num">
         <p><label><i class="fa fa-key"></i> Senha</label></p>
-        <input class="w3-input w3-border" name="senha" type="password" style="max-width:500px" placeholder="Senha" required name="senha">
-        <h5 class="w3-green w3-left" id="valid" > </h5>
+        <input class="w3-input w3-border" name="senha_hosp" type="password" style="max-width:500px" placeholder="Senha" required name="senha">
+        <h5 class="w3-vermelho w3-left" id="invalid"></h5>
+        <h5 class="w3-green w3-left" id="valid"></h5>
         <button type="submit" style="max-width:500px" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-center">ENTRAR <i class="fa fa-check"></i></button></form>
         <a href="../homepage.php"><button class="w3-button w3-red w3-section"><i class="fa fa-mail-reply"></i> Voltar</button></a>
     </div>
