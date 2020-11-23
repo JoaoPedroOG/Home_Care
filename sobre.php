@@ -34,8 +34,8 @@ body {font-family: "Lato", sans-serif}
             porém não conseguem, devido a distância que se encontra ou problemas com transporte até a unidade, esperamos de coração
             que a nossa ferramenta consiga facilitar e tornar mais prático receber cuidados médicos para todos que  desejam utilizá-lo. Nós esperamos
             que com as consultas domiciliares os clientes possam ficar mais próximos dos serviços de saúde do país e que a ideia de "ir ao médico" deixe
-            de ser algo desgastante e cansativo.</p><hr>
-        </h4>
+            de ser algo desgastante e cansativo.</p>
+        </h4><hr>
         <h5><p class="w3-opacity "><i>Sobre os desenvolvedores</i></p></h5>
         <table>
             <tr>
@@ -72,8 +72,10 @@ body {font-family: "Lato", sans-serif}
         <h4 class="w3-justify "><p>O site foi feito na linguagem PHP (Hypertext Preprocessor) utilizando diversos 
             recursos que a própria linguagem nos fornece, como a conexão com um banco de dados PHPMyAdmin, no 
             qual foi hospedado no servidor devserver, que simula um dominio WWW com interpretador de PHP. Também utilizamos
-            a linguagem javascript para os formulários no site.
+            a linguagem javascript para os formulários no site.</p>
         </h4>
-    <div>
+    </div>
+    <div class="w3-container w3-aqua w3-padding-16 "></div>
+</div>   
 </body>
 </html>
