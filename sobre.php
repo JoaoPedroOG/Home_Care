@@ -30,8 +30,8 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-container w3-content  w3-center-left w3-padding-32 w3-light-gray w3-borda w3-border-red" style="max-width:1280px">
         <h2 class=" w3-center "> SOBRE NÓS</h2><hr>
         <h5><p class="w3-opacity "><i>Sobre o projeto</i></p></h5>
-        <h4 class="w3-justify "><p>O site Home&Care foi feito com o objetivo de ajudar as pessoas com necessidade de ir ao hospital
-            porém não conseguem, devido a distância que se encontra ou problemas com transporte até a unidade, esperamos de coração
+        <h4 class="w3-justify "><p>O site Home&Care foi feito com o objetivo de ajudar as pessoas que necessitam ir 
+            ao hospital, porém não conseguem devido a distancia que se encontram ou problemas com transporte até a unidade, esperamos de coração
             que a nossa ferramenta consiga facilitar e tornar mais prático receber cuidados médicos para todos que  desejam utilizá-lo. Nós esperamos
             que com as consultas domiciliares os clientes possam ficar mais próximos dos serviços de saúde do país e que a ideia de "ir ao médico" deixe
             de ser algo desgastante e cansativo.</p>
