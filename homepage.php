@@ -103,7 +103,7 @@ body {font-family: "Lato", sans-serif}
         <a class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal_hosp').style.display='block'">Hospital</a>
       </div>
     </div>
-	<a href="#sobre" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
+	<a href="sobre.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
   </div>
 </div>
 
@@ -209,9 +209,9 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-container w3-content w3-center w3-padding-64 w3-white" style="max-width:800px" id="trabs">
     <h2 class="w3-wide ">NOSSO SERVIÇO</h2>
     <p class="w3-justify ">O Home&Care é um site voltado para aqueles que optaram pelo hospital ir até você.
-	Nosso site permite que você, cliente, solicite um médico de um hospital de sua preferência para se direcionar 
-	até a sua casa e assim realizar uma consulta médica da mesma forma que em um hospital. São simples os passos para se registrar
-	e começar a utilizar dos nossos serviços, continue rolando para saber mais.</p>
+	    Nosso site permite que você, cliente, solicite um médico de um hospital de sua preferência para se direcionar 
+	    até a sua casa e assim realizar uma consulta médica da mesma forma que em um hospital. São simples os passos para se registrar
+	    e começar a utilizar dos nossos serviços, continue rolando para saber mais.</p>
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>Criar uma consulta</p>
@@ -232,7 +232,7 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-red" id="cadastrar">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
       <h2 class="w3-wide w3-center">FAÇA SEU CADASTRO</h2>
-      <p class="w3-opacity w3-center"><i>Cadastra-se agora mesmo e junte-se a nós!</i></p><br>
+      <p class="w3-opacity w3-center"><i>Cadastre-se agora mesmo e junte-se a nós!</i></p><br>
 		<h3 class="w3-wide w3-center">Cadastre-se como:</h3><br>
       <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
         <div class="w3-third w3-margin-bottom ">
@@ -300,13 +300,19 @@ body {font-family: "Lato", sans-serif}
 <footer class="w3-container w3-padding-55 w3-center w3-red w3-large" id="sobre">
 <div class="w3-container w3-content w3-center w3-padding-64 w3-white" style="max-width:1000px" >
   <h2 class="w3-wide w3-center">SOBRE</h2>
-  <p class="w3-justify ">A Home&Care foi criada com o objetivo de ajudar pessoas que buscam praticidade 
-  na hora de realizar uma consulta médica. Esperamos que nosso projeto consiga 
-  fazer as pessoas perderem menos tempo em filas de hospitais e deixe a relação
+  <p class="w3-justify ">A Home&Care foi criada com o objetivo de 
+    ajudar pessoas que buscam praticidade 
+  na hora de realizar uma consulta médica. Esperamos que nosso 
+  projeto consiga 
+  fazer as pessoas perderem menos tempo em filas de hospitais e 
+  deixe a relação
   médico-paciente muito mais próxima.</p>
-  <p class="w3-justify">A programação utilizada em nosso site foi visando a praticidade e objetividade para, assim, 
-  o cliente sentir-se confortável com o visual. O site foi fruto de um Trabalho de Conclusão de Curso da ETEC da 
-  Zona Leste, o mesmo foi programado pelo aluno Alexandre Gameiro de 3º ETIM Informática. Os ícones nos quais utilizamos para 
+  <p class="w3-justify">A programação utilizada em nosso site foi 
+    visando a praticidade e objetividade para, assim, 
+  o cliente sentir-se confortável com o visual. O site foi fruto 
+  de um Trabalho de Conclusão de Curso da ETEC da 
+  Zona Leste, o mesmo foi programado pelo aluno Alexandre Gameiro 
+  de 3º ETIM Informática. Os ícones nos quais utilizamos para 
   fácil entendimento do site está disponível em 
   <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> da <a href="https://www.flaticon.com/" title="Flaticon"> Flaticon</a>
   </p>
