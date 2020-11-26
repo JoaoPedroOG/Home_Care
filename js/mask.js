@@ -17,4 +17,6 @@ $(document).ready(function () {
   $CEP.mask('00000-000', { reverse: true });
   var $CNPJ = $("#InputCNPJ");
   $CNPJ.mask('00.000.000/0000-00', { reverse: true });
+  var $Hora = $("#InputHora");
+  $Hora.mask('00:00', { reverse: true });
 });

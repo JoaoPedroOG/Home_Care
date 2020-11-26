@@ -16,6 +16,41 @@ body {font-family: "Lato", sans-serif}
 
 <body class="w3-agua w3-white">
 <?php
+    if(isset($_GET["e"])){
+      if($_GET["e"]== 6){
+        echo '
+                <script language = "javascript" type = "text/javascript">
+                  $(document).ready(function(){
+
+                    $("#consulta_tm").css("display", "block");
+
+                  });
+                  document.addEventListener("DOMContentLoaded", function(event) {
+                    document.getElementById("invalid").textContent = "Essa consulta já foi marcada";
+                  });
+  
+                </script>
+  
+            ';
+      }
+      else if($_GET["e"]==12){
+        echo '
+                <script language = "javascript" type = "text/javascript">
+                  $(document).ready(function(){
+
+                    $("#consulta_tm").css("display", "block");
+
+                  });
+                  document.addEventListener("DOMContentLoaded", function(event) {
+                    document.getElementById("valid").textContent = "Consulta marcada, agora é só esperar"
+                  });
+    
+                </script>
+    
+            ';
+      }
+    }
+
     session_start();
     include 'php/config.php';
     include 'php/mysqlexecuta.php';
@@ -78,6 +113,7 @@ body {font-family: "Lato", sans-serif}
         $id_med = $consulta['cod_medico'];
         $m = mysqlexecuta($con,"SELECT * FROM medico where cod_medico like '$id_med'");
         $med = mysqli_fetch_assoc($m); ?>
+        <p><label>Sintomas:<?php echo $consulta['diagnostico']; ?>
         <p><label>Nome do Médico:<?php echo $med['nome'];?><hr> <?php }?>
     <p><button class="w3-button w3-red w3-section" onclick="document.getElementById('visualizar_tm').style.display='none'">Fechar </button>
     </h4></div>
@@ -95,14 +131,38 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-container w3-preto">
     <h4>
       <form name="entra_pac" method="POST" action="cadastro/cad_consulta.php">
+      <p><label><i class="fa fa-user-md"></i> Nome Médico</label></p> 
+      <select class="w3-input w3-border" id="Medico" name="nome_medico" style="max-width:500px" >
+      <option> Selecione </option>
+      <?php 
+      $p= mysqlexecuta($con,"SELECT nome FROM medico");
+      while($pesq = mysqli_fetch_array($p)){ 
+        ?><option> <?php echo $pesq['nome']; ?> </option>
+      <?php
+      }
+      ?>
+      </select>
       <p><label><i class="fa fa-home"></i> Endereço da consulta</label></p>  
-      <input class="w3-input w3-border " id="Endereco" name="endereco" type="text" placeholder="Nome da rua, número" required name="endereco" style="max-width:500px">
+      <input class="w3-input w3-border " id="Endereco" name="endereco_consulta" type="text" placeholder="Nome da rua, número" required name="endereco" style="max-width:500px" maxlength="60">
       <p><label><i class="fa fa-calendar"></i> Data da consulta</label></p>  
-      <input class="w3-input w3-border" id="InputDN" name="nascimento" type="text" style="max-width:500px" placeholder="DD/MM/AAAA" required name="Nascimento">
-      <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">AGENDAR</button></form>
-      <button class="w3-button w3-red w3-section" onclick="document.getElementById('consulta_tm').style.display='none'">Fechar</button></h4>
+      <input class="w3-input w3-border" id="InputDN" name="data_consulta" type="text" style="max-width:500px" placeholder="DD/MM/AAAA" required name="Nascimento">
+	  <p><label><i class="fa fa-clock-o"></i> Horário da consulta</label></p>  
+      <input class="w3-input w3-border" id="InputHora" name="horario_consulta" type="text" style="max-width:500px" placeholder="__:__" required name="Nascimento" maxlength="5">
+	  <p><label><i class="fa fa-heart"></i> Sintomas</label></p>  
+      <input class="w3-input w3-border" id="InputDI" name="diagnostico" type="text" style="max-width:500px" placeholder="Sintomas" required name="Nascimento" maxlength="60">
+      <p><h5 class="w3-vermelho w3-left" id="invalid"> </h5> 
+      <p><h5 class="w3-verde w3-left" id="valid">  </h5> 
+      <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-left">AGENDAR</button></form>
+      <button class="w3-button w3-red w3-section w3-left" onclick=limpa_e()>Fechar</button></h4>
     </div>
   </div>
 </div>
+<script>
+  function limpa_e(){
+    document.getElementById('consulta_tm').style.display='none'
+    document.getElementById("invalid").textContent = "";
+    document.getElementById("valid").textContent = "";
+  }
+</script>
 </body>
 </html>

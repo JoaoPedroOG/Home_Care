@@ -142,7 +142,7 @@ body {font-family: "Lato", sans-serif}
       <input class="w3-input w3-border" id="InputCRM" name="login" type="text" placeholder="Digite seu CRM" required name="CRM" maxlength="10">
       <p><label><i class="fa fa-key"></i> Senha</label></p>
       <input class="w3-input w3-border" name="senha" type="password" placeholder="Digite sua senha" required name="Senha">
-      <h5 class="w3-vermelho w3-left" id="invalid2" > </h5>
+      <h5 class="w3-vermelho w3-left" id="invalid2"> </h5>
       <button type="submit" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-right">ENTRAR <i class="fa fa-check"></i></button></form>
       <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal_med').style.display='none'">Close <i class="fa fa-remove"></i></button>
       <p class="w3-right">Não tem uma conta? <a href="#cadastrar" class="w3-text-blue" onclick="document.getElementById('ticketModal_med').style.display='none'" >Cadastre-se</a></p>
