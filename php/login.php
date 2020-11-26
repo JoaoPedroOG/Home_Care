@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 include 'mysqlexecuta.php';
 $con = conectar ();
@@ -10,14 +11,17 @@ $senha= $_POST["senha"];
 switch ($verificacao){
   case 1:
     $sql="SELECT * FROM paciente where cpf like '$login' and senha like '$senha'";
+    $nome_user="SELECT nome FROM paciente where cpf like '$login'";
     $e=1;
   break;
   case 2:
     $sql="SELECT * FROM medico where crm like '$login' && senha like '$senha'";
+    $nome_user="SELECT nome FROM medico where crm like '$login'";
     $e=2;
   break;
   case 3:
     $sql="SELECT * FROM hospital where cnes like '$login' && senha like '$senha'";
+    $nome_user="SELECT nome FROM hospital where cnes like '$login'";
     $e=3;
   break;
   case 4:
@@ -25,7 +29,7 @@ switch ($verificacao){
     $e=4;
   break; 
 }
-
+$_SESSION['cpf'] = $login;
 $res = mysqlexecuta($con,$sql);
 $quant= (mysqli_num_rows($res)); //qtde de linhas encontradas na consulta
 if ($quant==0){
@@ -34,7 +38,7 @@ if ($quant==0){
 }
 
     else if($e!=4){
-    header("location:menu.php");}
+    header("location:../menu.php");}
     else if($e==4){
     header("location:../cadastro/cad_medico.php");
     }
