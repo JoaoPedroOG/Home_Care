@@ -42,6 +42,10 @@ body {font-family: "Lato", sans-serif}
           ';
     }
   }
+session_start();
+include '../php/config.php';
+include '../php/mysqlexecuta.php';
+$con = conectar ();
 ?>
 <!-- Navbar -->
 <div class="w3-top">
@@ -76,7 +80,17 @@ body {font-family: "Lato", sans-serif}
         <p><label><i class="fa fa-id-card-o"></i> CPF</label></p>  
         <input class="w3-input w3-border" id="InputCPF" name="cpf_med"  type="text" style="max-width:500px" placeholder="CPF" required name="cpf">
         <p><label><i class="fa fa-stethoscope"></i> Especialidade </label></p>  
-        <input class="w3-input w3-border" name="esp" type="text" style="max-width:500px" placeholder="Especialidade" required name="especialidade" maxlength="30">
+        <select class="w3-select w3-border" name="esp"  style="max-width:500px" placeholder="Especialidade" required name="especialidade">
+          <option> Selecione </option>
+          <?php
+            $esp = mysqlexecuta($con,"SELECT * from especialidade");
+            while ($espec = mysqli_fetch_array($esp)){
+          ?> 
+          <option> 
+            <?php echo $espec['nome_esp'] ?> 
+          </option>    
+          <?php } ?>
+        </select>
         <p><label><i class="fa fa-map-pin"></i> Cidade</label></p>  
         <input class="w3-input w3-border" name="cidade_med" type="text" style="max-width:500px" placeholder="Cidade" required name="cidade" maxlength="60">
         <p><label><i class="fa fa-map-signs"></i> Estado (Sigla)</label></p>  
