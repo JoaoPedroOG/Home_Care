@@ -103,7 +103,7 @@ body {font-family: "Lato", sans-serif}
         <a class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal_hosp').style.display='block'">Hospital</a>
       </div>
     </div>
-	<a href="sobre.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
+	<a href="sobre.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
   </div>
 </div>
 
