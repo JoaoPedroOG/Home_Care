@@ -68,7 +68,7 @@ body {font-family: "Lato", sans-serif}
         <p><label><i class="fa fa-user"></i> Nome</label></p>  
         <input class="w3-input w3-border" name="nome_pac" type="text" style="max-width:500px" placeholder="Nome" required name="nome" maxlength="60">
         <p><label><i class="fa fa-birthday-cake"></i> Data de Nascimento</label></p>  
-        <input class="w3-input w3-border" id="InputDN" name="nasc_pac" type="text" style="max-width:500px" placeholder="Data de Nascimento" required name="nasc">
+        <input class="w3-input w3-border"  name="nasc_pac" type="date" style="max-width:500px" placeholder="Data de Nascimento" required name="nasc">
         <p><label><i class="fa fa-phone"></i> Telefone</label></p>  
         <input class="w3-input w3-border" id="InputFone" name="fone_pac" type="text" style="max-width:500px" placeholder="Telefone" required name="fone">
         <p><label><i class="fa fa-id-card-o"></i> CPF</label></p>  
