@@ -100,11 +100,15 @@ $con = conectar ();
         <h5 class="w3-vermelho w3-left" id="invalid"></h5>
         <h5 class="w3-green w3-left" id="valid"></h5>
         <button type="submit" style="max-width:500px" class="w3-button w3-block w3-red w3-padding-16 w3-section w3-center">ENTRAR <i class="fa fa-check"></i></button></form>
-        <a href="../menuHospital.php"><button class="w3-button w3-red w3-section"><i class="fa fa-mail-reply"></i> Voltar</button></a>
+        <a href="../menuHospital.php"><button class="w3-button w3-red w3-section" onclickl=limpa_e()><i class="fa fa-mail-reply"></i> Voltar</button></a>
     </div>
     <div class="w3-container w3-aqua  w3-padding-32"></div>
 </div> 
 <script>
+  function limpa_e(){
+    document.getElementById("invalid").textContent = "";
+    document.getElementById("valid").textContent = "";
+  }
   function myFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {

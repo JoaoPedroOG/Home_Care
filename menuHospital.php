@@ -72,7 +72,7 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-red w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a class="w3-bar-item w3-padding-large">HOME&CARE</a>
-	<a href="homepage.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MENU</a>
+	<a href="homepage.php" class=" w3-right w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-power-off"></i> SAIR</a>
   </div>
 </div>
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
@@ -85,7 +85,7 @@ body {font-family: "Lato", sans-serif}
         <h1 class="w3-center"><i class="fa fa-hospital-o"></i> <?php echo $user['nome']; ?> </h1>
     </div>
     <div class="w3-container w3-content  w3-center-left w3-padding-32 w3-light-grey w3-borda2 w3-border-red" style="max-width:1280px">
-        <h3 class="w3-opacity w3-center">Este é o menu, onde você pode gerenciar médicos e visualizar seus dados.
+        <h3 class="w3-opacity w3-center">Este é o menu, onde você pode gerenciar médicos e visualizar os dados do hospital.
           <p>  O que deseja fazer ?
         </h3><br>
         
@@ -112,6 +112,7 @@ body {font-family: "Lato", sans-serif}
         </div>
     </div>
 </div>
+<div class="w3-container w3-agua w3-padding-32 "> </div>
 <!-- Ticket Modal visualizar-->
 <div id="visualizar_tm" class="w3-modal">
   <div class="w3-modal-content w3-animate-top w3-card-4">

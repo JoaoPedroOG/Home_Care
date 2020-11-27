@@ -111,7 +111,7 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-red w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a class="w3-bar-item w3-padding-large">HOME&CARE</a>
-    <a href="homepage.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MENU</a>
+    <a href="homepage.php" class="w3-right  w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-power-off"> </i> SAIR</a>
   </div>
 </div>
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
