@@ -36,25 +36,63 @@ switch ($tipo) {
         $num_h = $_POST["num"];
         $sql = "UPDATE hospital set nome = '$nome_h', telefone = '$telefone_h', endereco = '$endereco_h', cep = '$cep_h', numero = '$num_h' WHERE cnes like '$cnes' ";
         break;
+    case 'medico':
+        $nome_medico = $_POST["nome"];
+        $crm = $_SESSION["crm"];
+        $nascimento = $_POST["nascimento"];
+        $cidade = $_POST["cidade"];
+        $estado = $_POST["estado"];
+        $sql = "UPDATE medico set nome = '$nome_medico', data_nasc = '$nascimento', cidade = '$cidade', estado = '$estado' where crm like '$crm' ";
+        break;
+    case 'resultado':
+        $cod_consulta = $_POST['consulta_ID'];
+        $resultado = $_POST['resultado'];
+        
+        $sql = "UPDATE consulta set resultado = '$resultado', Status = 'Fechado' where cod_consulta like '$cod_consulta'";
+        
+        break;
 }
 try {
-        $res = mysqlexecuta($con, $sql);
-        
-    } catch (mysqli_sql_exception $e) {
-        echo $e->getMessage();
-    }
-if($tipo=='paciente'){
-    $a = mysqlexecuta($con, "SELECT * from paciente where nome like '$nome_paciente' and cpf like '$cpf_paciente'");
+    $res = mysqlexecuta($con, $sql);
+} catch (mysqli_sql_exception $e) {
+    echo $e->getMessage();
 }
-else if($tipo=='hospital'){
+if ($tipo == 'paciente') {
+    $a = mysqlexecuta($con, "SELECT * from paciente where nome like '$nome_paciente' and cpf like '$cpf_paciente'");
+} else if ($tipo == 'hospital') {
     $a = mysqlexecuta($con, "SELECT * from hospital where nome like '$nome_h' and cnes like '$cnes' and telefone like '$telefone_h'");
+} else if ($tipo == 'medico') {
+    $a = mysqlexecuta($con, "SELECT * from medico where nome like '$nome_medico' and crm like '$crm'");
+} else if ($tipo == 'resultado') {
+    $a = mysqlexecuta($con, "SELECT * from consulta where resultado like '$resultado' and cod_consulta like '$cod_consulta'");
 }
 
 $alterou = mysqli_num_rows($a);
 
 if ($alterou == 0) {
-    header('location:../menuHospital.php?erro=2');
-} 
-else {
-    header('location:../menuHospital.php?erro=1'); //certo
+    if ($tipo == 'paciente') {
+        header('location:../menu.php?erro=2');
+    }
+    if ($tipo == 'hospital') {
+        header('location:../menuHospital.php?erro=2');
+    }
+    if ($tipo == 'medico') {
+        header('location:../menuMedico.php?erro=2');
+    }
+    if ($tipo == 'resultado') {
+        header('location:../menuMedico.php?erro=6');
+    }
+} else {
+    if ($tipo == 'paciente') {
+        header('location:../menu.php?erro=1'); //certo
+    }
+    if ($tipo == 'hospital') {
+        header('location:../menuHospital.php?erro=1');
+    }
+    if ($tipo == 'medico') {
+        header('location:../menuMedico.php?erro=1');
+    }
+    if ($tipo == 'resultado') {
+        header('location:../menuMedico.php?erro=12');
+    }
 }

@@ -111,7 +111,6 @@ body {font-family: "Lato", sans-serif}
             </h4>
         </div>
     </div>
-</div>
 <div class="w3-container w3-agua w3-padding-32 "> </div>
 <!-- Ticket Modal visualizar-->
 <div id="visualizar_tm" class="w3-modal">

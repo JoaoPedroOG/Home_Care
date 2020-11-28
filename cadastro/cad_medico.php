@@ -83,7 +83,7 @@ $con = conectar ();
         <select class="w3-select w3-border" name="esp"  style="max-width:500px" placeholder="Especialidade" required name="especialidade">
           <option> Selecione </option>
           <?php
-            $esp = mysqlexecuta($con,"SELECT * from especialidade");
+            $esp = mysqlexecuta($con,"SELECT * from especialidade order by nome_esp");
             while ($espec = mysqli_fetch_array($esp)){
           ?> 
           <option> 

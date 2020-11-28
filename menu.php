@@ -111,7 +111,7 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-red w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a class="w3-bar-item w3-padding-large">HOME&CARE</a>
-    <a href="homepage.php" class="w3-right  w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-power-off"> </i> SAIR</a>
+    <a href="homepage.php" class="w3-right  w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-power-off"></i> SAIR</a>
   </div>
 </div>
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
@@ -120,7 +120,7 @@ body {font-family: "Lato", sans-serif}
 </div>
 <div class="w3-container w3-agua w3-padding-32 "> </div>
     <div class="w3-container w3-content  w3-center-left w3-padding-32 w3-red w3-borda w3-border-red" style="max-width:1280px">
-        <h1 class="w3-center"> Bem vindo, <?php echo $user['nome']; ?> </h1>
+      <h1 class="w3-center"> Bem vindo, <?php echo $user['nome']; ?> </h1>
     </div>
     <div class="w3-container w3-content  w3-center-left w3-padding-32 w3-light-grey w3-borda2 w3-border-red" style="max-width:1280px">
         <h3 class="w3-opacity w3-center">Este é o menu, onde você pode gerenciar consultas e visualizar seus dados.
@@ -148,7 +148,7 @@ body {font-family: "Lato", sans-serif}
             </h4>
         </div>
     </div>
-</div>
+    <div class="w3-container w3-agua w3-padding-32 "> </div>
 <!-- Ticket Modal visualizar-->
 <div id="visualizar_tm" class="w3-modal">
   <div class="w3-modal-content w3-animate-top w3-card-4">
@@ -190,23 +190,14 @@ body {font-family: "Lato", sans-serif}
     <h4>
       <form name="cons_cria" method="POST" action="cadastro/cad_consulta.php">
       <p><label><i class="fa fa-user-md"></i> Nome Médico</label></p> 
-      <select class="w3-select w3-border" id="Medico" name="nome_medico" style="max-width:500px" >
+      <select class="w3-select w3-border"  name="medico_esp" style="max-width:500px" >
       <option> Selecione </option>
       <?php 
-      $nome_medico = $pesq['nome'];
-      $g = mysqlexecuta($con,"SELECT especialidade.nome_esp FROM especialidade
-        inner join medico_especialidade
-        on especialidade.cod_esp = medico_especialidade.cod_esp
-        inner join medico
-        on medico_especialidade.cod_medico = medico.cod_medico
-        where medico.nome like '$nome_medico'");
-      $geeg = mysqli_fetch_array($g);
-
       $p= mysqlexecuta($con,"SELECT nome FROM medico");
       while($pesq = mysqli_fetch_array($p)){ 
         ?><option> <?php
         $nome_medico = $pesq['nome'];
-      $g = mysqlexecuta($con,"SELECT especialidade.nome_esp FROM especialidade
+        $g = mysqlexecuta($con,"SELECT especialidade.nome_esp FROM especialidade
         inner join medico_especialidade
         on especialidade.cod_esp = medico_especialidade.cod_esp
         inner join medico
@@ -253,7 +244,7 @@ body {font-family: "Lato", sans-serif}
         <input type="text" name="nome" style="max-width:400px"  class="w3-inpute w3-border" value="<?php echo $user['nome'] ?> "  placeholder="Nome" required name="Nome"></p>
        
         <p><label><i class="fa fa-birthday-cake"></i> Nascimento:
-        </label><input class="w3-inpute w3-border" style="max-width:200px"  name="nascimento" value=<?php echo $user['data_nasc']  ?> type="date" placeholder="DD/MM/AAAA" required name="Nascimento"></p>  
+        </label><input class="w3-inpute w3-border" style="max-width:200px" type="date"  name="nascimento" value="<?php echo $user['data_nasc'] ?>"  placeholder="DD/MM/AAAA" required name="Nascimento"></p>  
         
         <p><label><i class="fa fa-phone"></i> Telefone: </label>
         <input class="w3-inpute w3-border" style="max-width:200px" id="InputFone" name="fone" value="<?php echo $user['fone'] ?>" type="text" placeholder="00 00000-0000" required name="Telefone"></p>   

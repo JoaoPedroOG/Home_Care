@@ -31,24 +31,25 @@ switch ($verificacao){
 }
 $_SESSION['cpf'] = $login;
 $_SESSION['cnes'] = $login;
+$_SESSION['crm'] = $login;
 $res = mysqlexecuta($con,$sql);
 $quant= (mysqli_num_rows($res)); //qtde de linhas encontradas na consulta
 if ($quant==0){
   header('location:../homepage.php?e='.$e);
   //echo $e." ".$quant." ".$sql;
 }
-    else if($e!=4){
-    if ($e == 1) {
-      header("location:../menu.php");
+    else if($e!=4) {
+      if ($e == 1) {
+        header("location:../menu.php");
       }
-    else if ($e == 2) {
-      header("location:../menu.php");
+      else if ($e == 2) {
+        header("location:../menuMedico.php");
       }
-    else if ($e == 3) {
-      header("location:../menuHospital.php");
+      else if ($e == 3) {
+        header("location:../menuHospital.php");
       }
     }
     else if($e==4){
-    header("location:../menuHospital.php");
+      header("location:../menuHospital.php");
     }
 ?>
